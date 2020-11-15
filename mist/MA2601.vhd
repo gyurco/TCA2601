@@ -377,7 +377,7 @@ begin
       wren => rom_wr
     );
 
-  rom_size <= std_logic_vector(unsigned('0'&rom_wr_a(14 downto 0)) + 1);
+  rom_size <= x"1000" when rom_wr_a(15 downto 0)=x"0000" else std_logic_vector(unsigned('0'&rom_wr_a(14 downto 0)) + 1);
 
   -- 2nd menu index - load with SuperChip support OR 3rd character in extension is 's'
   sc <= '1' when index(1) = '1' or file_ext(7 downto 0) = x"53" or file_ext(7 downto 0) = x"73" else '0';
