@@ -819,11 +819,11 @@ begin
                     when "010111" =>
                         hblank <= '0';
                     when "101001" =>
-                        center <= '0';
                     when "010100" =>
                         hblank <= '1';
                         pf_cnt <= '0';
-                    when "011000" =>
+                        center <= '0';
+                    when "101100" =>
                         center <= '1';
                     when others => null;
                 end case;
